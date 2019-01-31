@@ -1,0 +1,31 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.9",
+    "express-engine-hotloader": "^2.0.1",
+    "node-sass": "^4.7.2",
+    "postcss": "^6.0.17",
+    "postcss-loader": "^2.1.0",
+    "pug": "^2.0.0-rc.4",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-hot-middleware": "^2.21.0"
+  }
+}
