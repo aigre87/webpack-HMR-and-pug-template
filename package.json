@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./src/backend/server.js"
+    "webpack": "webpack NODE_ENV=production",
+    "dev": "NODE_ENV=development node ./src/backend/server.js "
   },
   "keywords": [],
   "author": "",

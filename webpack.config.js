@@ -1,17 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
-
+const argv = require('yargs').argv;
+const isDevelopment = argv.mode === 'development';
+const isProduction = !isDevelopment;
 
 const config = {
 	entry: [
-		'webpack-hot-middleware/client',
     	path.resolve(__dirname, './src/frontend/app.js')
 	],
 	output: {
 		path: path.resolve(__dirname + '/dist'),
 		filename: './bundle.js'
 	},
-	devtool: 'inline-source-map',
   	resolve: {
     	modules: [
      	'./',
@@ -45,8 +45,8 @@ const config = {
 		]
   },
   plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin(),
+		// new webpack.HotModuleReplacementPlugin(),
+		// new webpack.NamedModulesPlugin(),
 	],
 }
 
