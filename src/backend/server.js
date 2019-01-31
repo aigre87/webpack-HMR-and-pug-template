@@ -5,9 +5,9 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack.config.js');
+const config = require('../../webpack.config.js');
 const app = express();
-const router = require('./router.js');
+const rootDir = path.dirname(require.main.filename);
 
 const compiler = webpack(config);
 const devMiddleware = webpackDevMiddleware(compiler, {
@@ -31,7 +31,10 @@ const withHotloader = require('express-engine-hotloader');
 app.engine('pug', withHotloader(server, pug.__express));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
-app.use(express.static(__dirname + '/views'));
-app.use('/', router);
+app.use(express.static(rootDir + '/dist'));
+//app.use('/', router);
+app.get('/', function (req, res) {
+    res.render('home', { title: 'Terms of use'});
+});
 
 server.listen(3000, () => console.log('Listening 3000'));

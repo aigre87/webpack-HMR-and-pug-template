@@ -5,19 +5,19 @@ const path = require('path');
 const config = {
 	entry: [
 		'webpack-hot-middleware/client',
-    path.resolve(__dirname, './app.js')
+    	path.resolve(__dirname, './src/frontend/app.js')
 	],
 	output: {
-		path: path.resolve(__dirname + '/views'),
+		path: path.resolve(__dirname + '/dist'),
 		filename: './bundle.js'
 	},
 	devtool: 'inline-source-map',
-  resolve: {
-    modules: [
-      './',
-      'node_modules',
-    ],
-  },
+  	resolve: {
+    	modules: [
+     	'./',
+      	'node_modules',
+    	],
+  	},
 	module: {
 		rules: [
 			{
